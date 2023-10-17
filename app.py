@@ -165,4 +165,4 @@ async def rmsd(num1: int = Form(0), num2: int = Form(0)):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, port=5000, host="127.0.0.4")
+    uvicorn.run(app, port=6000, host="0.0.0.0")
