@@ -58,4 +58,4 @@ async def soap_rmsd(request: Request):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, port=5000, host="127.0.0.6")
+    uvicorn.run("mysoap:app",reload=True, port=5000, host="0.0.0.0")

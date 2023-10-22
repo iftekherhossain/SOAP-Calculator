@@ -126,7 +126,7 @@ async def sos(num1: str = Form(0), num2: str = Form(0)):
       </soap12:Body>
     </soap12:Envelope>
     """
-    url = "http://127.0.0.6:5000/soap_sos.asmx"
+    url = "http://0.0.0.0:5000/soap_sos.asmx"
     headers = {'content-type': 'text/xml'}
     response = requests.post(url, data=data, headers=headers)
     print(response.text)
@@ -150,7 +150,7 @@ async def rmsd(num1: int = Form(0), num2: int = Form(0)):
       </soap12:Body>
     </soap12:Envelope>
     """
-    url = "http://127.0.0.6:5000/soap_rmsd.asmx"
+    url = "http://0.0.0.0:5000/soap_rmsd.asmx"
     headers = {'content-type': 'text/xml'}
     response = requests.post(url, data=data, headers=headers)
     print(response.text)
@@ -165,4 +165,4 @@ async def rmsd(num1: int = Form(0), num2: int = Form(0)):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, port=6000, host="0.0.0.0")
+    uvicorn.run("app:app",reload=True, port=6000, host="0.0.0.0")
